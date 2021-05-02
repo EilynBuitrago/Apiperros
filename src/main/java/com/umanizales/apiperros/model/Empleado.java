@@ -1,7 +1,6 @@
 package com.umanizales.apiperros.model;
 
 import lombok.*;
-
 import java.io.Serializable;
 
 @Getter
@@ -13,4 +12,5 @@ public class Empleado implements Serializable {
     private String nombre;
     private String identificacion;
     private double salario;
+
 }
