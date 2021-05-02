@@ -1,6 +1,8 @@
 package com.umanizales.apiperros.controller;
 
 import com.umanizales.apiperros.model.Empleado;
+import com.umanizales.apiperros.service.ListaSEService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -8,15 +10,19 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(path = "/capacitacion")
 @Validated
 public class CapacitacionController {
+    private ListaSEService listaSEService;
+
+    @Autowired
+    public CapacitacionController(ListaSEService listaSEService) {
+        this.listaSEService = listaSEService;
+    }
 
     @GetMapping
 
     public Empleado getEmployee(){
-<<<<<<<<< Temporary merge branch 1
-        Empleado Eilyn =new Empleado("Maicol herrada","10536563",
-=========
+
         Empleado Eilyn =new Empleado("Eilyn Buitrago","1002619297",
->>>>>>>>> Temporary merge branch 2
+
                 3000000);
         return Eilyn ;
     }
@@ -38,4 +44,16 @@ public class CapacitacionController {
         employee.setSalario(employee.getSalario()*1.15);
         return employee;
     }
+    @GetMapping(path = "/count")
+    public int getCountEmpleados()
+    {
+        return listaSEService.contarNodos();
+    }
+
+    @GetMapping(path = "/Listar")
+    public String getTotalEmployees()
+    {
+        return listaSEService.listarNodos();
+    }
 }
+

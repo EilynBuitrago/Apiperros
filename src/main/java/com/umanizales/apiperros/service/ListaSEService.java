@@ -10,6 +10,7 @@ public class ListaSEService {
 
     public ListaSEService(){
         this.listaSE=new ListaSE();
+
         // Llenara la Lista de la base de datos
         listaSE.adicionarNodo(new Empleado("Bety Duque","4505764",2300000));
         listaSE.adicionarNodo(new Empleado("Maria Gomez","24646213",100000));
@@ -18,5 +19,10 @@ public class ListaSEService {
 
     public int contarNodos(){
         return listaSE.getCont();
+    }
+
+    public String listarNodos()
+    {
+        return listaSE.listadoNodos();
     }
 }
