@@ -12,8 +12,9 @@ public class CapacitacionController {
     @GetMapping
 
     public Empleado getEmployee(){
-        Empleado orozco= new Empleado("Andres Orozco", "1053478965", 3500000);
-        return orozco;
+        Empleado Eilyn =new Empleado("Maicol herrada","10536563",
+                3000000);
+        return Eilyn ;
     }
 
     @GetMapping(path = "/empleados")
