@@ -1,5 +1,6 @@
 package com.umanizales.apiperros;
 
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.PathSelectors;
@@ -14,36 +15,38 @@ import java.util.Collections;
 
 @Configuration
 @EnableSwagger2
-
 public class SwaggerConfig {
 
-    @Bean
-    public Docket apiPaseoPerroDocket(){
-        return new Docket( DocumentationType.SWAGGER_2)
-                .groupName("PaseoPerros")
-                .select()
-                .apis(RequestHandlerSelectors.basePackage("com.umanizales.apipaseoperros.controller"))
-                .paths(PathSelectors.any()).build()
-                .apiInfo(getApiInfo());
+@Bean
+    public Docket apiPaseoPerrosDocket(){
+    return new Docket(DocumentationType.SWAGGER_2)
+            .groupName("paseoperros")
+            .select()
+            .apis(RequestHandlerSelectors.basePackage(
+                    "com.umanizales.apiperros.controller"))
+            .paths(PathSelectors.any()).build()
+            .apiInfo(getApiInfo());
     }
-
-    //Agregar metodo información o documentación de mi api
-    private ApiInfo getApiInfo(){
+    //Agregar documentacios api
+    private ApiInfo getApiInfo() {
         return new ApiInfo(
-                "API Paseo Perros Lista SE",
-                "Api que permite gestionar todo el backend a listas SE y DE ",
+                "API Paseo Perros Lista ",
+                "Api que permite gestionar todo el backend de listas SE y DE",
                 "1.0",
                 "http://www.umanizales.com/",
-        new Contact("Eilyn Buitrago","http://www.umanizales.com/","edbuitrago88116@umanizales.edu.co"),
-                "LISENSE",
+                new Contact("Eilyn Buitrago", "http://www.umanizales.edu.co/",
+                        "michael@umanizales.edu.co"),
+                "LICENSE",
                 "LICENSE URL",
                 Collections.emptyList()
         );
     }
 
 
-
-
-
-
 }
+
+
+
+
+
+
